@@ -22,3 +22,6 @@ pip install tk
 
 create a folder and place the [backpack_relist_script.py](https://github.com/modyabhi/BackpackTFClassifiedAutoBump/blob/main/backpack_relist_script.py) into the folder, download the chromedriver and place it in the same folder 
 
+## Running
+
+run the script from your terminal, it's an infinite loop until you close or break the loop. Remember if you relaunch the script you will need to reauth again with a new steam mobile authentication code. 
