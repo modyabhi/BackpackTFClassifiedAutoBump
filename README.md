@@ -9,6 +9,9 @@ A python script to automatically bump your backpackTF classified trades every 45
 * tkinter
 * selenium 
 * [chromedriver](https://chromedriver.chromium.org/downloads) tested on ChromeDriver 97.0.4692.71
+* steam auth code (keep it handy from your mobile authentication)
+
+**Note: You will only need to login in once when you run the program, if you close the automated browser or exit the application you will need to reauth again**
 
 ## Getting started
 
@@ -24,4 +27,4 @@ create a folder and place the [backpack_relist_script.py](https://github.com/mod
 
 ## Running
 
-run the script from your terminal, it's an infinite loop until you close or break the loop. Remember if you relaunch the script you will need to reauth again with a new steam mobile authentication code. 
+run the script from your terminal, it's an infinite loop until you close or break the loop.
