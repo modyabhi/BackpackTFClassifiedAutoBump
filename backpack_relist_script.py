@@ -52,6 +52,8 @@ class gui:
 
 root = tk.Tk()
 userGui = gui(root)
+root.wm_iconbitmap(r'2363211-game-gaming-play-steam-valve_85503.ico')
+root.wm_title('Login')
 root.mainloop()
 steamUser = userGui.steamUser
 steamPass = userGui.steamPass
