@@ -17,34 +17,55 @@ class gui:
         self.master = master
 
          # labels for each entry
-        tk.Label(self.master, text="Steam Username").grid(row=0)
-        tk.Label(self.master, text="Steam Password").grid(row=1)
-        tk.Label(self.master, text ="SteamID64").grid(row=2)
-        tk.Label(self.master, text="Steam Guard").grid(row=3)
+        tk.Label(self.master, text="Steam Username").grid(column=0,row=0)
+        tk.Label(self.master, text="Steam Password").grid(column=0,row=1)
+        tk.Label(self.master, text ="SteamID64").grid(column=0,row=2)
+        tk.Label(self.master, text="Steam Guard").grid(column=0,row=3)
+        tk.Label(self.master, text="* required fields",fg = "red",justify = 'center').grid(column=1,row=4)
 
-         # button widget
+        for i in range(4):
+            tk.Label(self.master, text="*",fg= "red").grid(column=1,row=i)
+
+        #create vars to keep track of
+        self.steamUser_var = tk.StringVar()
+        self.steamPass_var = tk.StringVar()
+        self.steamID64_var = tk.StringVar()
+        self.steamGuard_var = tk.StringVar()
+
+         # entry boxes for each label
         self.steamUserW = tk.Entry(self.master)
         self.steamPassW = tk.Entry(self.master, show="*")
         self.steamID64W = tk.Entry(self.master)
         self.steamGuardW = tk.Entry(self.master, show="*")
-        self.submit = tk.Button(self.master, text="Submit", command=self.assign)
+        self.submit = tk.Button(self.master, text="Submit", command=self.validate)
+    
         # bind the ENTER key to callback function
         self.steamGuardW.bind("<Return>", self.assign)
         self.steamGuardW.bind("<KP_Enter>", self.assign)
-        # space out the widgets
-        self.steamUserW.grid(row=0, column=1)
-        self.steamPassW.grid(row=1, column=1)
-        self.steamID64W.grid(row=2, column=1)
-        self.steamGuardW.grid(row=3, column=1)
-        self.submit.grid(row=6, column=1)
+
+    # space out the widgets
+        self.steamUserW.grid(row=0, column=2)
+        self.steamPassW.grid(row=1, column=2)
+        self.steamID64W.grid(row=2, column=2)
+        self.steamGuardW.grid(row=3, column=2)
+        self.submit.grid(row=5, column=1)
 
      # grabs the values in the entry boxes and assigns them to variable
      def assign(self, *args):
+
         self.steamUser = self.steamUserW.get()
         self.steamPass = self.steamPassW.get()
         self.steamGuard = self.steamGuardW.get()
         self.steamID64 = self.steamID64W.get()
         self.close()
+
+     # validates the entry boxes
+     def validate(self, *args):
+         if self.steamUser_var.get() and self.steamPass_var.get() and self.steamGuard_var.get() and self.steamID64_var.get():
+            self.submit.config(state = "normal", command = self.assign)
+            self.assign
+         else:
+            self.submit.config(state = "disabled")
 
      # closes GUI window
      def close(self):
@@ -55,10 +76,15 @@ userGui = gui(root)
 root.wm_iconbitmap(r'2363211-game-gaming-play-steam-valve_85503.ico')
 root.wm_title('Login')
 root.mainloop()
-steamUser = userGui.steamUser
-steamPass = userGui.steamPass
-steamGuard = userGui.steamGuard
-steamID64 = userGui.steamID64
+
+try:
+    steamUser = userGui.steamUser
+    steamPass = userGui.steamPass
+    steamGuard = userGui.steamGuard
+    steamID64 = userGui.steamID64
+except:
+    print("No inputs found")
+    exit()
 
 # open up log-in screen
 chromedriver = "chromedriver"
