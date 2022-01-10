@@ -19,31 +19,31 @@ class gui:
          # labels for each entry
         tk.Label(self.master, text="Steam Username").grid(row=0)
         tk.Label(self.master, text="Steam Password").grid(row=1)
-        tk.Label(self.master, text="Steam Guard").grid(row=2)
-        tk.label(self.master, text ="SteamID64").grid(row=3)
+        tk.Label(self.master, text ="SteamID64").grid(row=2)
+        tk.Label(self.master, text="Steam Guard").grid(row=3)
 
          # button widget
         self.steamUserW = tk.Entry(self.master)
         self.steamPassW = tk.Entry(self.master, show="*")
-        self.steamID64 = tk.Entry(self.master)
-        self.steamGuard = tk.Entry(self.master, show="*")
+        self.steamID64W = tk.Entry(self.master)
+        self.steamGuardW = tk.Entry(self.master, show="*")
         self.submit = tk.Button(self.master, text="Submit", command=self.assign)
         # bind the ENTER key to callback function
-        self.steamGuard.bind("<Return>", self.assign)
-        self.steamGuard.bind("<KP_Enter>", self.assign)
+        self.steamGuardW.bind("<Return>", self.assign)
+        self.steamGuardW.bind("<KP_Enter>", self.assign)
         # space out the widgets
         self.steamUserW.grid(row=0, column=1)
         self.steamPassW.grid(row=1, column=1)
-        self.steamGuard.grid(row=2, column=1)
-        self.steamID64.grid(row=3, column=1)
-        self.submit.grid(row=3, column=1)
+        self.steamID64W.grid(row=2, column=1)
+        self.steamGuardW.grid(row=3, column=1)
+        self.submit.grid(row=6, column=1)
 
      # grabs the values in the entry boxes and assigns them to variable
      def assign(self, *args):
         self.steamUser = self.steamUserW.get()
         self.steamPass = self.steamPassW.get()
-        self.steamGuard = self.steamGuard.get()
-        self.steamID64 = self.steamID64.get()
+        self.steamGuard = self.steamGuardW.get()
+        self.steamID64 = self.steamID64W.get()
         self.close()
 
      # closes GUI window
@@ -101,7 +101,7 @@ while True:
     try:
         for element in elements:
             actionChains.context_click(element).perform()
-            driver.implicitly_wait(5)
+            time.sleep(5)
     except:
         print("No relist items found")
         print("going to sleep")
