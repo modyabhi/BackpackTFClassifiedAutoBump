@@ -4,6 +4,7 @@ A python script to automatically bump your backpackTF classified trades every 45
 
 ## Dependencies
 
+* Python 3.6 or higher
 * selenium
 * alive_bar
 * tkinter
