@@ -20,19 +20,22 @@ class gui:
         tk.Label(self.master, text="Steam Username").grid(row=0)
         tk.Label(self.master, text="Steam Password").grid(row=1)
         tk.Label(self.master, text="Steam Guard").grid(row=2)
+        tk.label(self.master, text ="SteamID64").grid(row=3)
 
          # button widget
         self.steamUserW = tk.Entry(self.master)
         self.steamPassW = tk.Entry(self.master, show="*")
+        self.steamID64 = tk.Entry(self.master)
         self.steamGuard = tk.Entry(self.master, show="*")
         self.submit = tk.Button(self.master, text="Submit", command=self.assign)
         # bind the ENTER key to callback function
-        #self.emailPassW.bind("<Return>", self.assign)
-        #self.emailPassW.bind("<KP_Enter>", self.assign)
+        self.steamGuard.bind("<Return>", self.assign)
+        self.steamGuard.bind("<KP_Enter>", self.assign)
         # space out the widgets
         self.steamUserW.grid(row=0, column=1)
         self.steamPassW.grid(row=1, column=1)
         self.steamGuard.grid(row=2, column=1)
+        self.steamID64.grid(row=3, column=1)
         self.submit.grid(row=3, column=1)
 
      # grabs the values in the entry boxes and assigns them to variable
@@ -40,6 +43,7 @@ class gui:
         self.steamUser = self.steamUserW.get()
         self.steamPass = self.steamPassW.get()
         self.steamGuard = self.steamGuard.get()
+        self.steamID64 = self.steamID64.get()
         self.close()
 
      # closes GUI window
@@ -52,6 +56,7 @@ root.mainloop()
 steamUser = userGui.steamUser
 steamPass = userGui.steamPass
 steamGuard = userGui.steamGuard
+steamID64 = userGui.steamID64
 
 # open up log-in screen
 chromedriver = "chromedriver"
@@ -83,8 +88,11 @@ except:
 
 time.sleep(5)
 
+#infinite loop to check every 2700 seconds for items to bump
+profile_url = "https://backpack.tf/u/" + steamID64
+
 while True:
-    driver.get("https://backpack.tf/u/76561198060059269")
+    driver.get(profile_url)
     driver.implicitly_wait(10)
     actionChains = ActionChains(driver)
     elements = driver.find_elements(By.CSS_SELECTOR,"a.btn.btn-xs.btn-bottom.btn-default.listing-relist.listing-bump")
