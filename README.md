@@ -5,7 +5,18 @@ A python script to automatically bump your backpackTF classified trades every 45
 ## Dependencies
 
 * Python 3.6 or higher
-* selenium
 * alive_bar
 * tkinter
-* [chromedriver](https://chromedriver.chromium.org/downloads) 
+* selenium 
+* [chromedriver](https://chromedriver.chromium.org/downloads) tested on ChromeDriver 97.0.4692.71
+
+## Getting started
+
+Assuming you have python installed, lets start by installing depedencies
+
+`pip install selenium
+pip install aliver_bar
+pip install tk`
+
+create a folder and place the [backpack_relist_script.py](https://github.com/modyabhi/BackpackTFClassifiedAutoBump/blob/main/backpack_relist_script.py) into the folder, download the chromedriver and place it in the same folder 
+
