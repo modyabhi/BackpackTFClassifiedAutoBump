@@ -10,6 +10,7 @@ A python script to automatically bump your backpackTF classified trades every 45
 * selenium 
 * [chromedriver](https://chromedriver.chromium.org/downloads) tested on ChromeDriver 97.0.4692.71
 * steam auth code (keep it handy from your mobile authentication)
+* your steamID64 - https://steamid.io/
 
 **Note: You will only need to login in once when you run the program, if you close the automated browser or exit the application you will need to reauth again**
 
