@@ -39,6 +39,8 @@ Use your steam credentials and your steam guard code to launch the authenticatio
 Reference: 
 ![imgur](https://imgur.com/EmRzlGe.png)
 
+__The GUI uses python tkinter library, your credentials are not stored or shared outside your local enviornment. Please ensure you take all security measures to fix any vulnerabilities before doing this step.__
+
 ### Disclaimer
 
 I take no responsibility if you get banned from backpack.tf or incur any form of loss due to running this script. Please visit backpack.tf TOS to ensure you are not in violation.
