@@ -61,13 +61,12 @@ actionChains = ActionChains(driver)
 
 
 while True:
-    driver.implicitly_wait(10)
     x=1
     i=1
     while x>0:
         trade_url="https://backpack.tf/classifieds?page={}&steamid={}".format(i,steamID64)
         driver.get(trade_url)
-        time.slee(5)
+        driver.implicitly_wait(10)
         elements = driver.find_elements(By.CSS_SELECTOR,"a.btn.btn-xs.btn-bottom.btn-default.listing-relist.listing-bump")
         x = len(elements)
         print("{} pages of listings".format(i))
