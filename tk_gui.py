@@ -19,11 +19,17 @@ class gui:
         self.steamGuard_var = tk.StringVar()
 
          # entry boxes for each label
-        self.steamUserW = tk.Entry(self.master)
-        self.steamPassW = tk.Entry(self.master, show="*")
-        self.steamID64W = tk.Entry(self.master)
-        self.steamGuardW = tk.Entry(self.master, show="*")
+        self.steamUserW = tk.Entry(self.master,textvariable=self.steamUser_var)
+        self.steamPassW = tk.Entry(self.master, show="*",textvariable=self.steamPass_var)
+        self.steamID64W = tk.Entry(self.master,textvariable=self.steamID64_var)
+        self.steamGuardW = tk.Entry(self.master, show="*",textvariable=self.steamGuard_var)
         self.submit = tk.Button(self.master, text="Submit", command=self.validate)
+
+         #validate variables
+        self.steamUser_var.trace('w',self.validate)
+        self.steamPass_var.trace('w',self.validate)
+        self.steamID64_var.trace('w',self.validate)
+        self.steamGuard_var.trace('w',self.validate)
 
         # bind the ENTER key to callback function
         self.steamGuardW.bind("<Return>", self.assign)
@@ -41,7 +47,6 @@ class gui:
 
      # grabs the values in the entry boxes and assigns them to variable
      def assign(self, *args):
-
         self.steamUser = self.steamUserW.get()
         self.steamPass = self.steamPassW.get()
         self.steamGuard = self.steamGuardW.get()
@@ -52,7 +57,6 @@ class gui:
      def validate(self, *args):
          if self.steamUser_var.get() and self.steamPass_var.get() and self.steamGuard_var.get() and self.steamID64_var.get():
             self.submit.config(state = "normal", command = self.assign)
-            self.assign
          else:
             self.submit.config(state = "disabled")
 
