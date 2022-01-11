@@ -57,21 +57,30 @@ except:
 time.sleep(5)
 
 #infinite loop to check every 2700 seconds for items to bump
-profile_url = "https://backpack.tf/u/" + steamID64
+actionChains = ActionChains(driver)
+
 
 while True:
-    driver.get(profile_url)
     driver.implicitly_wait(10)
-    actionChains = ActionChains(driver)
-    elements = driver.find_elements(By.CSS_SELECTOR,"a.btn.btn-xs.btn-bottom.btn-default.listing-relist.listing-bump")
-    try:
+    x=1
+    i=1
+    while x>0:
+        trade_url="https://backpack.tf/classifieds?page={}&steamid={}".format(i,steamID64)
+        driver.get(trade_url)
+        time.slee(5)
+        elements = driver.find_elements(By.CSS_SELECTOR,"a.btn.btn-xs.btn-bottom.btn-default.listing-relist.listing-bump")
+        x = len(elements)
+        print("{} pages of listings".format(i))
+        print("{} items to bump".format(x))
+        time.sleep(1)
         for element in elements:
             actionChains.context_click(element).perform()
             time.sleep(5)
-    except:
-        print("No relist items found")
-        print("going to sleep")
-    driver.refresh()
+        i+=1
+
+    driver.get("https://backpack.tf/classifieds?page=i&steamid={}".format(steamID64))
+    print("Relisting complete")
+    print("Sleeping for 2700 seconds")
 
     with alive_bar(54000) as bar:
         for i in range(54000):
