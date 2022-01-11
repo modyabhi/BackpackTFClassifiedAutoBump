@@ -69,7 +69,7 @@ while True:
         driver.implicitly_wait(10)
         elements = driver.find_elements(By.CSS_SELECTOR,"a.btn.btn-xs.btn-bottom.btn-default.listing-relist.listing-bump")
         x = len(elements)
-        print("{} pages of listings".format(i))
+        print("{}: Page".format(i))
         print("{} items to bump".format(x))
         time.sleep(1)
         for element in elements:
