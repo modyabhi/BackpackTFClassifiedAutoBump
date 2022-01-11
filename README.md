@@ -35,6 +35,10 @@ Open up a terminal in the folder where you've saved the code and run the below c
 
 `python backpack_relist_script.py`
 
+Use your steam credentials and your steam guard code to launch the authentication process. 
+
+[logo]: https://imgur.com/EmRzlGe
+
 ### Disclaimer
 
 I take no responsibility if you get banned from backpack.tf or incur any form of loss due to running this script. Please visit backpack.tf TOS to ensure you are not in violation.
