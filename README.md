@@ -37,7 +37,7 @@ Open up a terminal in the folder where you've saved the code and run the below c
 
 Use your steam credentials and your steam guard code to launch the authentication process. 
 Reference: 
-![alt text][logo]
+![logo]
 
 [logo]: https://imgur.com/EmRzlGe
 
