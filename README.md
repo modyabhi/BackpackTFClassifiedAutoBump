@@ -1,6 +1,6 @@
 ﻿# BackpackTFClassifiedAutoBump
- 
-A python script to automatically bump your backpackTF classified trades every 45-50 minutes. It also includes a small GUI for auth through the backpack steam login [credit to Justin Liang script](http://justin-liang.com/personal_projects/steam_automation_script.pdf).
+
+A python script to automatically bump your backpackTF classified trades every 45-50 minutes without the need to be a premium member. It also includes a small GUI for auth through the backpack steam login [credit to Justin Liang script](http://justin-liang.com/personal_projects/steam_automation_script.pdf).
 
 ## Dependencies
 
@@ -38,3 +38,4 @@ Open up a terminal in the folder where you've saved the code and run the below c
 ### Disclaimer
 
 I take no responsibility if you get banned from backpack.tf or incur any form of loss due to running this script. Please visit backpack.tf TOS to ensure you are not in violation.
+This project is for educational purposes only. Backpack.tf is funded through donations and provides majority of their services for free. Support them if you wish to have a more automated way of bumping your trades.
