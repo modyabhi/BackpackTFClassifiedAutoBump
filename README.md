@@ -24,8 +24,17 @@ pip install aliver_bar
 pip install tk
 ```
 
-create a folder and place the [backpack_relist_script.py](https://github.com/modyabhi/BackpackTFClassifiedAutoBump/blob/main/backpack_relist_script.py) into the folder, download the chromedriver and place it in the same folder 
+* create a new folder
+* download chromedriver
+* download the entire code from this repo
+* place both chromedrive & code in the same folder
 
 ## Running
 
-run the script from your terminal, it's an infinite loop until you close or break the loop.
+Open up a terminal in the folder where you've saved the code and run the below command:
+
+`python backpack_relist_script.py`
+
+### Disclaimer
+
+I take no responsibility if you get banned from backpack.tf or incur any form of loss due to running this script. Please visit backpack.tf TOS to ensure you are not in violation.
